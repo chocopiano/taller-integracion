@@ -38,7 +38,7 @@
             <td><a href="{% url 'lugar' location %}">{{personaje.location.name}}</a></td>
             <td>
                 {% for episodio in capitulos %}
-                    {{episodio.name}}<br>
+                <a href="{% url 'inf_episodio' episodio.id %}">{{episodio.name}}</a><br>
                 {% endfor %}
             </td>
         </tr>
