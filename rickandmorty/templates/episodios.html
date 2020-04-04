@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rick and Morty</title>
+    <style>
+table, td, th {
+  border: 1px solid black;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  height: 50px;
+}
+</style>
+</head>
+<body>
+{% include "navegacion.html"%}
+<h1>Episodios</h1>
+<table>
+<thead>
+    <tr>
+    <th>Nombre</th>
+    <th>Fecha</th>
+    <th>Código</th>
+    </tr>
+</thead>
+    <tbody>
+        {% for episodio in episodios %}
+        <tr>
+            <td><a href="{% url 'inf_episodio' episodio.id %}">{{episodio.nombre}}</a></td>
+            <td>{{episodio.fecha}}</td>
+            <td>{{episodio.codigo}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

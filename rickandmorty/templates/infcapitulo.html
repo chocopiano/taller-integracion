@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Información Capitulo</title>
+    <style>
+table, td, th {
+  border: 1px solid black;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  height: 50px;
+}
+</style>
+</head>
+<body>
+{% include "navegacion.html"%}
+<table>
+<thead>
+    <tr>
+        <th>Nombre</th>
+        <th>Fecha</th>
+        <th>Codigo</th>
+        <th>Personajes</th>
+    </tr>
+</thead>
+    <tbody>
+    <tr>
+    <td>{{contenido.name}}</td>
+    <td>{{contenido.air_date}}</td>
+    <td>{{contenido.episode}}</td>
+        <td>
+            {% for character in personajes %}
+            <a href="{% url 'informacionp' character.id %}">{{character.nombre}}</a><br>
+
+            {% endfor %}
+        </td>
+    </tr>
+    </tbody>
+
+</table>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rick and Morty</title>
+    <link crossorigin="anonymous"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css"
+          integrity="sha256-8B1OaG0zT7uYA572S2xOxWACq9NXYPQ+U5kHPV1bJN4="
+          rel="stylesheet"/>
+    <link rel="shortcut icon" type="image/png" href="https://assets.digitalocean.com/logos/favicon.png"/>
+</head>
+<body>
+{% include "navegacion.html"%}
+<nav aria-label="main navigation" class="navbar is-light" role="navigation">
+<table class="table is-fullwidth is-striped is-bordered">
+    <thead>
+    <tr>
+        <th>Fotografia</th>
+        <th>Nombre</th>
+        <th>Estado</th>
+        <th>Especies</th>
+        <th>Tipo</th>
+        <th>Género</th>
+        <th>Origin</th>
+        <th>Lugar</th>
+        <th>Episodios</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><img src="{{personaje.image}}"></td>
+            <td>{{personaje.name}}</td>
+            <td>{{personaje.status}}</td>
+            <td>{{personaje.species}}</td>
+            <td>{{personaje.type}}</td>
+            <td>{{personaje.gender}}</td>
+            <td>{{personaje.origin.name}}</td>
+            <td><a href="{% url 'lugar' location %}">{{personaje.location.name}}</a></td>
+            <td>
+                {% for episodio in capitulos %}
+                    {{episodio.name}}<br>
+                {% endfor %}
+            </td>
+        </tr>
+    </tbody>
+</table>
+</nav>
+</body>
+</html>

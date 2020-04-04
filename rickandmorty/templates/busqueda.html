@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Busqueda </title>
+
+</head>
+<body>
+{% include "navegacion.html"%}
+    {% if aux %}
+        {% for capitulo in capitulos %}
+            <a href="{% url 'inf_episodio' capitulo.id %}">{{capitulo.nombre}}</a><br>
+        {% endfor %}
+        {% for personaje in personajes %}
+            <a href="{% url 'informacionp' personaje.id %}">{{personaje.nombre}}</a><br>
+        {% endfor %}
+        {% for lugar in lugares %}
+            <a href="{% url 'lugar' lugar.id %}">{{lugar.nombre}}</a><br>
+        {% endfor %}
+    {% else %}
+        <p>No hay coicidencias o no se ha introducido un mensaje</p>
+    {% endif %}
+
+</body>
+</html>

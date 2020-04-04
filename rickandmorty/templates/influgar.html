@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lugar</title>
+    <style>
+table, td, th {
+  border: 1px solid black;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  height: 50px;
+}
+</style>
+</head>
+<body>
+{% include "navegacion.html"%}
+<table>
+<thead>
+    <tr>
+        <th>Nombre</th>
+        <th>Tipo</th>
+        <th>Dimensión</th>
+        <th>Residentes</th>
+    </tr>
+</thead>
+    <tbody>
+    <tr>
+    <td>{{lugar.name}}</td>
+    <td>{{lugar.type}}</td>
+    <td>{{lugar.dimension}}</td>
+    <td>
+        {% for residente in residentes %}
+            {{residente}}<br>
+        {% endfor %}
+
+    </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
