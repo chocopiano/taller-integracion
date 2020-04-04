@@ -38,7 +38,7 @@ def buscar(request):
                 listaa.append(i)
         for i in lista1:
             j=i['nombre'].lower()
-            if palabra in j:
+            if palabra1 in j:
                 listab.append(i)
         for i in lista2:
             j=i['nombre'].lower()
