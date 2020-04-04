@@ -1,3 +1,3 @@
 # taller-integracion
 
-https://ricakandmorty-app-jg.herokuapp.com/home/
+https://tarea1-app-jg.herokuapp.com/home/
