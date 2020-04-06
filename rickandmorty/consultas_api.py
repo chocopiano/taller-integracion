@@ -3,7 +3,7 @@ import requests
 def capitulos():
     lista = []
     for m in range(1,3):
-        url='https://rickandmortyapi.com/api/episode/?page='+str(m)
+        url='https://integracion-rick-morty-api.herokuapp.com/api/episode/?page='+str(m)
         consulta=requests.get(url)
         capitulo=consulta.json()
         for i in capitulo['results']:
@@ -11,7 +11,7 @@ def capitulos():
     return lista
 
 def informacion_e(id):
-    url = 'https://rickandmortyapi.com/api/episode/'+id
+    url = 'https://integracion-rick-morty-api.herokuapp.com/api/episode/'+id
     consulta=requests.get(url)
     episodio=consulta.json()
     return episodio
@@ -25,7 +25,7 @@ def obtener_personajes(url):
     return personajes
 
 def obtener_personaje(id):
-    url='https://rickandmortyapi.com/api/character/'+id
+    url='https://integracion-rick-morty-api.herokuapp.com/api/character/'+id
     consulta=requests.get(url).json()
     return consulta
 
@@ -45,7 +45,7 @@ def obtener_idl(aux):
     return consulta['id']
 
 def obtner_lugar(id):
-    url='https://rickandmortyapi.com/api/location/'+id
+    url='https://integracion-rick-morty-api.herokuapp.com/api/location/'+id
     consulta=requests.get(url).json()
     return consulta
 
@@ -59,7 +59,7 @@ def obtener_residentes(aux):
 def personajes():
     lista=[]
     for m in range(1,26):
-        url='https://rickandmortyapi.com/api/character/?page='+str(m)
+        url='https://integracion-rick-morty-api.herokuapp.com/api/character/?page='+str(m)
         consulta=requests.get(url).json()
         for i in consulta["results"]:
             lista.append({'id':i['id'],'nombre':i['name']})
@@ -68,7 +68,7 @@ def personajes():
 def lugares():
     lista=[]
     for m in range(1,5):
-        url='https://rickandmortyapi.com/api/location/?page='+str(m)
+        url='https://integracion-rick-morty-api.herokuapp.com/api/location/?page='+str(m)
         consulta=requests.get(url).json()
         for i in consulta['results']:
             lista.append({'id':i['id'],'nombre':i['name']})
